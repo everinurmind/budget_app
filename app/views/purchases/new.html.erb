@@ -1,0 +1,35 @@
+<div class="categories-container">
+  <div class="categories-title">
+    <%= link_to categories_path do %>
+      <i class="fas fa-chevron-left white-symbol"></i>
+    <% end %>
+    <h1 class="text">NEW TRANSACTION</h1>
+  </div>
+ </div> 
+
+<%= form_with model: [@category, @purchase] do |form| %>
+    
+    <div class="field-new-category">
+      <%= form.label :name, "NAME" %>
+      <%= form.text_field :name, required: true, class: 'category-input' %>
+    </div>
+
+    <div class="field-new-category">
+      <%= form.label :amount, "AMOUNT" %>
+      <%= form.number_field :amount, required: true, class: 'category-input' %>
+    </div>
+
+  <div class="field-categories-selection">
+  <div class="check-title">
+    <%= form.label :categories, class: 'uppercase-label' %>
+  </div>
+  <div class="category-checkboxes">
+    <% Category.all.each do |category| %>
+      <%= form.collection_check_boxes :category_ids, [category], :id, :name, multiple: true %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Save", class: "create-button" %>
+  </div>
+<% end %>
