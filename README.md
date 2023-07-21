@@ -6,6 +6,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+- [📽️ Loom Walkthrough](#loom-walker)    
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -63,6 +64,12 @@
 - see the money spent on each category.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LOOM -->
+
+## 📽️ Loom Walkthrough <a name="loom-walker"></a>  
+
+[VIDEO](https://www.loom.com/share/eef754f901f142b896fe8a9e69095eaa?sid=31ac790c-2430-4b64-be0a-25f207b43727)
 
 <!-- GETTING STARTED -->
 
