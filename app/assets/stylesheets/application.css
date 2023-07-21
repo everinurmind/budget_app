@@ -1,15 +1,436 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import 'font-awesome';
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Font face */
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 300;
+  src: url('../fonts/Fontspring-DEMO-proximanova-light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 700;
+  src: url('../fonts/Fontspring-DEMO-proximanova-bold.otf') format('opentype');
+}
+
+/* Bold text class */
+.text {
+  font-family: 'Proxima Nova', sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.sum-text {
+  font-weight: 900;
+}
+
+/* Media query for small screens */
+@media (max-width: 600px) {
+  body {
+    background-color: #f1f1f1;
+    font-family: 'Proxima Nova Light', sans-serif;
+    font-weight: 300;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  /* Welcome section */
+  .welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .welcome-title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .welcome-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .welcome-button {
+    padding: 10px 20px;
+    background-color: #3778c2;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  .welcome-button-sign-up {
+    text-decoration: none;
+    color: #434b54;
+  }
+
+  .welcome-button:hover {
+    background-color: #555;
+  }
+
+  /* Login section */
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-header {
+    background-image: linear-gradient(to bottom, #4c85c7, #3778c2);
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+
+  .login-title {
+    color: white;
+    font-size: 20px;
+  }
+
+  .login-input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+  }
+
+  .category-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+  }
+
+  .field-login {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .login-button {
+    background-color: #3778c2;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    font-size: 18px;
+  }
+
+  /* Transactions section */
+  .transactions-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .transactions-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #4c85c7, #3778c2);
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    text-align: center;
+  }
+
+  .transactions-title h1 {
+    color: white;
+    margin: 0;
+  }
+
+  .logout-icon {
+    color: #3778c2 !important;
+  }
+
+  .category-box {
+    background-color: white;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .categories-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .categories-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to bottom, #4c85c7, #3778c2);
+    width: 100%;
+    padding: 30px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    text-align: center;
+  }
+
+  .categories-title h1 {
+    color: white;
+    margin: 0;
+  }
+
+  .check-title {
+    background-color: #999;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .uppercase-label {
+    text-transform: uppercase;
+  }
+
+  .category-icon {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+  }
+
+  .category-details {
+    flex-grow: 1;
+  }
+
+  .category-details h3 {
+    text-align: left;
+    margin-top: -15px;
+    padding-left: 20px;
+    margin-bottom: 5px;
+    color: #434b54;
+  }
+
+  .category-details p {
+    color: black;
+  }
+
+  .buttons-container {
+    display: flex;
+    width: 100%;
+  }
+
+  .btn-main {
+    display: flex;
+    justify-content: center;
+    background-color: #5fb523;
+    color: white;
+    padding: 20px 10px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    width: 100%;
+  }
+
+  .scan-text {
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: -20px;
+    padding: 20px 0;
+  }
+
+  .btn-primary {
+    background-color: gray;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    align-self: center;
+    width: 30%;
+  }
+
+  .btn-primary:hover {
+    background-color: darkgray;
+  }
+
+  .category-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .title-container {
+    background-color: #3778c2;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .title {
+    color: white;
+    margin: 0;
+  }
+
+  .field-new-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .create-button {
+    background-color: #5fb523;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 20px 20px;
+    letter-spacing: 1px;
+  }
+
+  .details-container,
+  .title-section {
+    background-color: #3778c2;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 9rem;
+  }
+
+  .details-title {
+    color: white;
+    margin: 0 0 0 -20px;
+  }
+
+  .icon-container {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .category-name {
+    font-weight: bold;
+  }
+
+  .transaction-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  .new-transaction-button {
+    display: block;
+    background-color: #5fb523;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+
+  .white-symbol {
+    color: white;
+  }
+
+  .category-transactions-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    align-items: center;
+  }
+
+  .complete-purchase-detail-container {
+    background-color: white;
+  }
+
+  .field-categories-selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .category-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .field input[type="text"],
+  .field input[type="email"],
+  .field input[type="password"] {
+    width: 95%;
+    padding: 5px;
+  }
+
+  .actions .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3778c2;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .actions .btn:hover {
+    background-color: darkblue;
+  }
+
+  .actions .btn-secondary {
+    background-color: gray;
+  }
+
+  .actions .btn-secondary:hover {
+    background-color: darkgray;
+  }
+}
+
+/* Visually hidden class */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
