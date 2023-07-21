@@ -160,7 +160,9 @@ Please leave me to review if you have any questions or remarks.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-Thanks to the Microverse team, for all your help and support on this project.
+- Thanks to the Microverse team, for all your help and support on this project.
+
+- Credit is due to **Gregoire Vella** for his original design idea that served as the inspiration for this app's creation. The app's overall layout and design bear significant influence from his work, and I am sincerely thankful for the inspiration he has provided.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
