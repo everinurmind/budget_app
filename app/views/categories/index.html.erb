@@ -1,0 +1,35 @@
+<div class="transactions-container">
+  <div class="transactions-title">
+    <i class="fas fa-bars white-symbol"></i>
+    <h1 class="text">TRANSACTIONS</h1>
+    <i class="fas fa-search white-symbol"></i>
+  </div>
+
+  <% @categories.each do |category| %>
+    <div class="category-box">
+      
+      <%= link_to category_path(category) do %>
+        <div class="category-icon">
+          <%= image_tag category.icon, alt: category.name, class: "category-image" %>
+        </div>
+      <% end %>
+
+      <div class="category-details">
+        <h3><%= category.name %></h3>
+      </div>
+
+      <div>
+        <% total_amount = category.category_transactions.sum { |ct| ct.purchase.amount } %>
+        <p class="total-amount sum-text">$<%= total_amount %></p>
+      </div>
+
+    </div>
+  <% end %>
+  <%= link_to log_out_path, method: :delete do %>
+    <i class="fas fa-sign-out-alt white-symbol logout-icon"></i>
+  <% end %>
+</div>
+
+  <%= link_to new_category_path, class: "btn btn-main" do %>
+    <span class="scan-text">SCAN</span>
+  <% end %>
